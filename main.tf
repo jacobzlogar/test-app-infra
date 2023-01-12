@@ -1,4 +1,5 @@
 provider "helm" {
+  debug = true
   kubernetes {
     config_path = "~/.kube/config"
   }
@@ -45,6 +46,6 @@ resource "helm_release" "meilisearch-deploy" {
 
 resource "helm_release" "nextjs-deploy" {
   name = "nextjs-test-app"
-  repository = "https://jacobzlogar.github.io/test-app-nextjs/deploy/charts/test-app-nextjs"
-  chart = "linux"
+  repository = "https://jacobzlogar.github.io/test-app-nextjs/helm"
+  chart = "test-app-nextjs"
 }
