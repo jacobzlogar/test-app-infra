@@ -24,13 +24,7 @@ resource "helm_release" "soketi-deploy" {
   chart      = "soketi"
   set {
     name = "extraEnv"
-    value = jsonencode(["SOKETI_DEBUG=1", "PORT=6969", "SOKETI_ADAPTER_DRIVER=redis"]) # dont think this is correct
-  }
-
-
-  set {
-    name  = "service.type"
-    value = "ClusterIP"
+    value = jsonencode(["SOKETI_DEBUG=1", "PORT=6969", "SOKETI_ADAPTER_DRIVER=redis"]) # pretty sure this doesnt work
   }
 }
 
@@ -47,15 +41,10 @@ resource "helm_release" "meilisearch-deploy" {
 
   repository = "https://factly.github.io/helm-charts"
   chart      = "meilisearch"
-
-  set {
-    name  = "service.type"
-    value = "ClusterIP"
-  }
 }
 
 resource "helm_release" "nextjs-deploy" {
   name = "nextjs-test-app"
-  repository = "https://jacobzlogar.github.io/nextjs-k8s"
-  chart = "nextjs-k8s"
+  repository = "https://jacobzlogar.github.io/test-app-nextjs/deploy/charts/test-app-nextjs"
+  chart = "linux"
 }
