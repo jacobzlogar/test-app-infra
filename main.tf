@@ -43,6 +43,11 @@ resource "helm_release" "postgresql-deploy" {
     name = "service.type"
     value = "NodePort"
   }
+
+  set {
+    name = "postegresqlPassword"
+    value = "test-app"
+  }
 }
 
 resource "helm_release" "meilisearch-deploy" {
@@ -50,11 +55,6 @@ resource "helm_release" "meilisearch-deploy" {
 
   repository = "https://factly.github.io/helm-charts"
   chart      = "meilisearch"
-
-  set {
-    name = "postegresqlPassword"
-    value = "test-app"
-  }
 }
 
 resource "helm_release" "nextjs-deploy" {
