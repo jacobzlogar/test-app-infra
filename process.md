@@ -2,7 +2,7 @@
 1. install [helm](https://helm.sh/docs/intro/install/)
 
 ### Packaging
-1. [ authenticate with docker hub ][https://docs.docker.com/engine/reference/commandline/login/]
+1. (authenticate with docker hub)[https://docs.docker.com/engine/reference/commandline/login/]
 2. in the repo of the service you're packaging run:
 ```
 docker build -t yourname/name-of-image .
