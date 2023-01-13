@@ -8,5 +8,7 @@
 
 ``` sh
 terraform apply -auto-approve
+kubectl port-forward svc/soketi-test-app 6001:6001
+kubectl port-froward svc/test-app-nextjs 3000:80
 ```
 
