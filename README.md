@@ -4,6 +4,10 @@
 #### install [terraform](https://developer.hashicorp.com/terraform/downloads?product_intent=terraform)
 #### install [minikube](https://developer.hashicorp.com/terraform/downloads?product_intent=terraform)
 
+1. cd `/eks`
+2. `terraform init`
+3. `terraform apply` this will take awhile
+
 ## Run
 
 ``` sh
